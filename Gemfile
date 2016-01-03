@@ -16,7 +16,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms'
 gem 'pry'
-gem 'has_scope'
+#gem 'has_scope'
 gem 'autoprefixer-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
