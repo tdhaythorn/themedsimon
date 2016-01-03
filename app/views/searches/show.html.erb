@@ -1,0 +1,37 @@
+
+<div class="container">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+    
+                <% if @search.search_students.empty? %>
+                
+                        <p> No Students Found</p>
+                
+                <% else %>
+                
+                        <% @search.search_students.each do |c| %>
+                        <br>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                 <h3 class="panel-title"><%= c.firstname %></h3>
+                            </div>
+                            <div class="panel-body">
+                               
+                                <p> First Name: <%= c.firstname %> </p>
+                                <p> City: <%= c.city %> </p>
+                                <p> Grade Point Average: <%= c.gpa %> </p>
+                            </div>
+                        </div>
+                        
+                        <% end %>
+                        
+                <% end %>
+                
+                <button type="button" class="btn btn-default"><%= link_to 'Back', new_user_search_path(current_user) %></button>
+    
+    </div>
+        <div class="col-md-3">
+        </div>
+</div>

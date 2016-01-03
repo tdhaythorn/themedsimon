@@ -1,0 +1,98 @@
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Basic Form</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<%= url_for :controller => 'dashboards', :action => 'dashboard_1' %>">Dashboard</a>
+        </li>
+        <li>
+            <a>Searches</a>
+        </li>
+        <li class="active">
+            <strong>Recent Searches</strong>
+        </li>
+    </ol>
+</div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+<div class="row">
+    <div class="col-lg-7">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5> Below are your recent searches </h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#">Config option 1</a>
+                        </li>
+                        <li><a href="#">Config option 2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-12 b-r">
+                        
+               
+                  <!-- Begin Search -->
+                            
+
+                <% if @recent.empty? %>
+                    
+                    <p> No Recent Searches</p>
+                    
+                <% else %>
+                    
+                    <% @recent.each do |c| %>
+                    <br>
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             <h3 class="panel-title">
+                              
+                <%= link_to c.searchname, user_search_path(current_user, c.id)%>
+
+                </h3>
+                        
+                        </div>
+                        <div class="panel-body">
+                           
+                            <p> Number of Students: <%= c.searchname %> </p>
+                            <p> Search Created At: <%= c.created_at %> </p>
+                            <p> Search Refined At: <%= c.updated_at %> </p>
+                        </div>
+                    </div>
+                    
+                    <% end %>
+                            
+                <% end %>
+
+                          
+
+                          <!-- End Search -->
+    
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+        
+        
+
+
+
+    

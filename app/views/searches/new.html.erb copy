@@ -1,0 +1,208 @@
+<body>
+    <div class="container">
+      <!-- Example row of columns -->
+
+        
+        <div class="col-md-9">
+          
+          <div class="Row"> 
+            <h1>Enter Your Search Criteria</h2>
+          </div>
+          
+          <div class="jumbotron">
+              
+
+    <%= bootstrap_form_for @search, url: user_searches_path(current_user), html: {class: "pure-form"} do |s| %>
+          
+          <%= s.hidden_field :userid, :value => current_user.id %>
+         
+          <div class="field">
+            <%= s.text_field :searchname, label: "Search Name" %>
+          </div>
+          
+<h2> Region </h2>
+
+                  
+          <div class="field">
+            <%= s.country_select :countryofdegree, priority_countries: ["AU"] %>
+          </div>
+
+           <div class="field">
+            <%= s.select :state, @states.collect {|p| [ p.name ] }, include_blank: 'N/A' %>
+          </div>
+          
+           <div class="field">
+            <%= s.select :city, @cities.collect {|p| [ p.name ] }, include_blank: 'N/A' %>
+          </div>
+
+          
+<h2> Personal </h2>
+           
+       
+          <div class="field">
+            <%= s.select :language, @languages.collect {|p| [ p.name ] }, include_blank: 'N/A' %>
+          </div>
+          
+           
+          <div class="field">
+            <P><%= s.text_field :livingin, size: 10 %> </p>
+          </div>
+           
+          <div class="field">
+            <P><%= s.text_field :age, size: 10 %> </p>
+          </div>
+          
+           <div class="field">
+              <%= s.form_group :gender, label: { text: "Gender" }, help: "Select gender for equality programs" do %>
+              <p></p>
+                  <%= s.radio_button :gender, 0, label: "Male",   inline: true %>
+                  <%= s.radio_button :gender, 6, label: "Female", inline: true %>
+                <% end %>
+          </div>
+          
+ <h2> Degree </h2>
+          
+           <div class="field">
+            <P><%= s.text_field :min_gpa, size: 10%> </p>
+            <P><%= s.text_field :max_gpa, size: 10%> </p>
+          </div>
+          
+          <div class="field">
+            <P><%= s.text_field :universityname, size: 10 %> </p>
+          </div>
+          
+          <div class="field">
+            <P><%= s.text_field :degree, size: 10 %> </p>
+          </div>
+          
+          <div class="field">
+            <P><%= s.text_field :degreetype, size: 10 %> </p>
+          </div>
+          
+            <div class="field">
+            <P><%= s.text_field :countryofdegree, size: 10 %> </p>
+          </div>
+          
+          
+<h2> Work Experience </h2>
+          
+          <div class="field">
+          <%= s.form_group :workexperience, label: { text: "Minimum Work Experience" }, help: "Select How Many Months of Work Experience" do %>
+          <p></p>
+              <%= s.radio_button :workexperience, 0, label: "0-6 Months", inline: true %>
+              <%= s.radio_button :workexperience, 6, label: "6-12 Months", inline: true %>
+              <%= s.radio_button :workexperience, 12, label: "12-18 Months", inline: true %>
+              <%= s.radio_button :workexperience, 18, label: "18+ Months", inline: true %>
+            <% end %>
+          </div>
+          
+          
+          <div class="field">
+            <P><%= s.text_field :wantstoworkin, size: 10 %> </p>
+          </div>
+          
+          
+          <div class="field">
+            <P><%= s.text_field :hasworkexperiencein, size: 10 %> </p>
+          </div>
+          
+          
+          <div class="field">
+            <P><%= s.text_field :permissiontoworkin, size: 10 %> </p>
+          </div>
+          
+          
+          <div class="field">
+            <P><%= s.text_field :currentlyemployed, size: 10 %> </p>
+          </div>
+          
+           <div class="field">
+            <P><%= s.text_field :referencesuponrequest, size: 10 %> </p>
+          </div>
+          
+           <div class="field">
+            <P><%= s.text_field :worktype, size: 10 %> </p>
+          </div>
+          
+      
+<h2> Above and Beyond </h2>
+          
+           <div class="field">
+          <%= s.form_group :monthsspentabroadliving, label: { text: "Minimum Months Spend Abroad Living" }, help: "Select how many months spent abroad working" do %>
+          <p></p>
+              <%= s.radio_button :monthsspentabroadliving, 0, label: "0-6 Months",   inline: true %>
+              <%= s.radio_button :monthsspentabroadliving, 6, label: "6-12 Months", inline: true %>
+              <%= s.radio_button :monthsspentabroadliving, 12, label: "12-18 Months", inline: true %>
+              <%= s.radio_button :monthsspentabroadliving, 18, label: "18+ Months", inline: true %>
+            <% end %>
+          </div>
+          
+           <div class="field">
+          <%= s.form_group :monthsspentabroadworking, label: { text: "Minimum Months Spend Abroad Working" }, help: "Select how many months spent abroad living" do %>
+          <p></p>
+              <%= s.radio_button :monthsspentabroadworking, 0, label: "0-6 Months",   inline: true %>
+              <%= s.radio_button :monthsspentabroadworking, 6, label: "6-12 Months", inline: true %>
+              <%= s.radio_button :monthsspentabroadworking, 12, label: "12-18 Months", inline: true %>
+              <%= s.radio_button :monthsspentabroadworking, 18, label: "18+ Months", inline: true %>
+            <% end %>
+          </div>
+          
+
+         <div class="field">
+          <%= s.form_group :monthsspentabroadworking, label: { text: "Minimum Months Spend Abroad Working" }, help: "Select how many months spent abroad living" do %>
+          <p></p>
+              <%= s.radio_button :monthsspentabroadworking, 0, label: "Less than 6 Months",   inline: true %>
+              <%= s.radio_button :monthsspentabroadworking, 6, label: "More than 6 Months", inline: true %>
+             
+            <% end %>
+          </div>
+          
+       
+         <div class="field">
+          <%= s.form_group :charitywork, label: { text: "Has done charity work" }, help: "Select if charity work is relevant" do %>
+          <p></p>
+              <%= s.radio_button :charitywork, 0, label: "Less than 6 Months",   inline: true %>
+              <%= s.radio_button :charitywork, 6, label: "More than 6 Months", inline: true %>
+             
+            <% end %>
+          </div>
+        
+
+          <div class="actions"> <%= s.submit "Search", class: "btn btn-success" %> </div>
+          <a class="btn btn-default" href="/corporate" role="button">Back</a>              
+
+          <% end %>
+          
+          
+            
+         <P></P>
+        
+         </div>
+          
+         <div class ="row">
+          
+        
+
+         </div>
+       
+       </div>
+        <div class="col-md-0">
+       
+       
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Simon 2015</p>
+      </footer>
+    </div>
+
+
+  </body>
+  
+    
+    <!-- /container -->
+    
+    
