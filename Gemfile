@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 #Simontest Gems
+gem 'rails_12factor', group: :production
 gem 'country_select', '~> 2.5', '>= 2.5.1'
 gem 'countries', '~> 1.2', '>= 1.2.2'
 gem 'sort_alphabetical', '~> 1.0', '>= 1.0.2'
@@ -26,7 +27,7 @@ gem 'pry'
 gem 'autoprefixer-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.4'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails', '4.3.0.0'
 
