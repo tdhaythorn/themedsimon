@@ -21,3 +21,4 @@ City.create(name: 'Brisbane', state: 'Queensland')
 City.create(name: 'Perth', state: 'Western Australia')
 City.create(name: 'Adelaide', state: 'South Australia')
 City.create(name: 'Gold Coast-Tweed Heads', state: 'Queensland/New South Wales')
+
