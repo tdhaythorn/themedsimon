@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160103050500) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cities", force: :cascade do |t|
     t.string   "name"
     t.string   "state"
@@ -40,8 +43,8 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.datetime "updated_at",          null: false
   end
 
-  add_index "corporateprofiles", ["user_id", "created_at"], name: "index_corporateprofiles_on_user_id_and_created_at"
-  add_index "corporateprofiles", ["user_id"], name: "index_corporateprofiles_on_user_id"
+  add_index "corporateprofiles", ["user_id", "created_at"], name: "index_corporateprofiles_on_user_id_and_created_at", using: :btree
+  add_index "corporateprofiles", ["user_id"], name: "index_corporateprofiles_on_user_id", using: :btree
 
   create_table "corporates", force: :cascade do |t|
     t.integer  "user_id"
@@ -69,6 +72,26 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "status"
+    t.string   "companyname"
+    t.string   "companylogo"
+    t.string   "companybanner"
+    t.string   "companywebsite"
+    t.string   "companyindustry"
+    t.string   "companytype"
+    t.string   "companyheadquarters"
+    t.string   "companysize"
+    t.string   "companyvideo"
+    t.string   "aboutus"
+    t.string   "country"
+    t.string   "state"
+    t.string   "city"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
   create_table "searches", force: :cascade do |t|
     t.string   "searchname"
     t.string   "firstname"
@@ -82,7 +105,7 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.float    "gpa"
     t.integer  "workexperience"
     t.string   "livingin"
-    t.integer  "monthsspentabroadliving"
+    t.integer  "monthsspentabroadLiving"
     t.integer  "monthsspentabroadworking"
     t.string   "degree"
     t.string   "degreetype"
@@ -96,15 +119,13 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.string   "gender"
     t.string   "currentlyemployed"
     t.string   "worktype"
-    t.boolean  "saved"
-    t.integer  "resultscount"
     t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
 
-  add_index "searches", ["user_id", "created_at"], name: "index_searches_on_user_id_and_created_at"
-  add_index "searches", ["user_id"], name: "index_searches_on_user_id"
+  add_index "searches", ["user_id", "created_at"], name: "index_searches_on_user_id_and_created_at", using: :btree
+  add_index "searches", ["user_id"], name: "index_searches_on_user_id", using: :btree
 
   create_table "states", force: :cascade do |t|
     t.string   "name"
@@ -127,7 +148,7 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.float    "gpa"
     t.integer  "workexperience"
     t.string   "livingin"
-    t.integer  "monthsspentabroadliving"
+    t.integer  "monthsspentabroadLiving"
     t.integer  "monthsspentabroadworking"
     t.string   "degree"
     t.string   "degreetype"
@@ -154,4 +175,6 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "corporateprofiles", "users"
+  add_foreign_key "searches", "users"
 end

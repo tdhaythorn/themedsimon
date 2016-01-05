@@ -38,7 +38,7 @@ before_action :require_user
     private
     
     def search_params
-        params.require(:search).permit(:searchname, :city, :min_gpa, :max_gpa, :firstname, :state, :city, :age, :gender, :universityname, :language, :livingin, :workexperience, :monthsspentabroadLiving, :monthsspentabroadworking, :degree , :degreetype, :countryofdegree, :wantstoworkin, :hasworkexperiencein, :permissiontoworkin, :currentlyemployed, :referencesuponrequest, :worktype, :charitywork)
+        params.require(:search).permit(:searchname, :city, :min_gpa, :max_gpa, :firstname, :state, :city, :age, :gender, :universityname, :language, :livingin, :workexperience, :monthsspentabroadliving, :monthsspentabroadworking, :degree , :degreetype, :countryofdegree, :wantstoworkin, :hasworkexperiencein, :permissiontoworkin, :currentlyemployed, :referencesuponrequest, :worktype, :charitywork)
     end
     
     
