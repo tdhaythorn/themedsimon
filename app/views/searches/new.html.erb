@@ -165,15 +165,7 @@
                       
                 <h2> Above and Beyond </h2>
                           
-                           <div class="field">
-                          <%= s.form_group :monthsspentabroadliving, label: { text: "Minimum Months Spend Abroad Living" }, help: "Select how many months spent abroad working" do %>
-                          <p></p>
-                              <%= s.radio_button :monthsspentabroadliving, 0, label: "0-6 Months",   inline: true %>
-                              <%= s.radio_button :monthsspentabroadliving, 6, label: "6-12 Months", inline: true %>
-                              <%= s.radio_button :monthsspentabroadliving, 12, label: "12-18 Months", inline: true %>
-                              <%= s.radio_button :monthsspentabroadliving, 18, label: "18+ Months", inline: true %>
-                            <% end %>
-                          </div>
+                           
                           
                            <div class="field">
                           <%= s.form_group :monthsspentabroadworking, label: { text: "Minimum Months Spend Abroad Working" }, help: "Select how many months spent abroad living" do %>
@@ -182,6 +174,16 @@
                               <%= s.radio_button :monthsspentabroadworking, 6, label: "6-12 Months", inline: true %>
                               <%= s.radio_button :monthsspentabroadworking, 12, label: "12-18 Months", inline: true %>
                               <%= s.radio_button :monthsspentabroadworking, 18, label: "18+ Months", inline: true %>
+                            <% end %>
+                          </div>
+
+                           <div class="field">
+                          <%= s.form_group :monthsspentabroadliving, label: { text: "Minimum Months Spend Abroad Working" }, help: "Select how many months spent abroad living" do %>
+                          <p></p>
+                              <%= s.radio_button :monthsspentabroadliving, 0, label: "0-6 Months",   inline: true %>
+                              <%= s.radio_button :monthsspentabroadliving, 6, label: "6-12 Months", inline: true %>
+                              <%= s.radio_button :monthsspentabroadliving, 12, label: "12-18 Months", inline: true %>
+                              <%= s.radio_button :monthsspentabroadliving, 18, label: "18+ Months", inline: true %>
                             <% end %>
                           </div>
                           

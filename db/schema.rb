@@ -72,26 +72,6 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "profiles", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "status"
-    t.string   "companyname"
-    t.string   "companylogo"
-    t.string   "companybanner"
-    t.string   "companywebsite"
-    t.string   "companyindustry"
-    t.string   "companytype"
-    t.string   "companyheadquarters"
-    t.string   "companysize"
-    t.string   "companyvideo"
-    t.string   "aboutus"
-    t.string   "country"
-    t.string   "state"
-    t.string   "city"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-  end
-
   create_table "searches", force: :cascade do |t|
     t.string   "searchname"
     t.string   "firstname"
@@ -105,7 +85,7 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.float    "gpa"
     t.integer  "workexperience"
     t.string   "livingin"
-    t.integer  "monthsspentabroadLiving"
+    t.integer  "monthsspentabroadliving"
     t.integer  "monthsspentabroadworking"
     t.string   "degree"
     t.string   "degreetype"
@@ -119,6 +99,8 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.string   "gender"
     t.string   "currentlyemployed"
     t.string   "worktype"
+    t.boolean  "saved"
+    t.integer  "resultscount"
     t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -148,7 +130,7 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.float    "gpa"
     t.integer  "workexperience"
     t.string   "livingin"
-    t.integer  "monthsspentabroadLiving"
+    t.integer  "monthsspentabroadliving"
     t.integer  "monthsspentabroadworking"
     t.string   "degree"
     t.string   "degreetype"
