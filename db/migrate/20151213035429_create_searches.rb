@@ -14,8 +14,8 @@ class CreateSearches < ActiveRecord::Migration
       t.float :gpa
       t.integer :workexperience 
       t.string :livingin 
-      t.integer :monthsspentabroadliving
-      t.integer :monthsspentabroadworking
+      t.float :monthsspentabroadliving
+      t.float :monthsspentabroadworking
       t.string :degree 
       t.string :degreetype 
       t.string :countryofdegree

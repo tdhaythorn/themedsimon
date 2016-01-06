@@ -25,11 +25,10 @@ class Search < ActiveRecord::Base
         students = students.where(["degreetype LIKE ?", "%#{degreetype}%"]) if degreetype.present?
         students = students.where(["countryofdegree LIKE ?", "%#{countryofdegree}%"]) if countryofdegree.present?
 
-
+monthsspentabroadliving
         students = students.where(["workexperience >= ?", workexperience]) if workexperience.present?
         students = students.where(["monthsspentabroadliving >= ?", monthsspentabroadliving]) if monthsspentabroadliving.present?
-        students = students.where(["monthsspentabroadworking => ?", monthsspentabroadworking]) if monthsspentabroadworking.present?
-
+        students = students.where(["monthsspentabroadworking >= ?", monthsspentabroadworking]) if monthsspentabroadworking.present?
        
         students = students.where(["wantstoworkin LIKE ?", "%#{wantstoworkin}%"]) if wantstoworkin.present?
         students = students.where(["hasworkexperiencein LIKE ?", "%#{hasworkexperiencein}%"]) if hasworkexperiencein.present?
