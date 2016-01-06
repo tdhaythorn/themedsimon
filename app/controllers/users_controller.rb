@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       #redirect_to '/corporate'
-      redirect_to dashboards_dashboard_1_path
+      redirect_to widgets_index_path
     else
       redirect to '/signup'
     end
