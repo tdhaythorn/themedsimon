@@ -31,7 +31,7 @@ def new
   private
 
   def profile_params
-    params.require(:corporateprofile).permit(:first_name, :last_name, :blurb, :photo,:user_id)
+    params.require(:corporateprofile).permit(:companyname, :companylogo,:companybanner,:companywebsite,:companyindustry,:companytype, :companyheadquarters,:companysize,:companyvideo,:aboutus,:city,:state,:country)
   end
 
 end
