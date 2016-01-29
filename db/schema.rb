@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160103050500) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "cities", force: :cascade do |t|
     t.string   "name"
     t.string   "state"
@@ -43,8 +40,8 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.datetime "updated_at",          null: false
   end
 
-  add_index "corporateprofiles", ["user_id", "created_at"], name: "index_corporateprofiles_on_user_id_and_created_at", using: :btree
-  add_index "corporateprofiles", ["user_id"], name: "index_corporateprofiles_on_user_id", using: :btree
+  add_index "corporateprofiles", ["user_id", "created_at"], name: "index_corporateprofiles_on_user_id_and_created_at"
+  add_index "corporateprofiles", ["user_id"], name: "index_corporateprofiles_on_user_id"
 
   create_table "corporates", force: :cascade do |t|
     t.integer  "user_id"
@@ -106,8 +103,8 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.datetime "updated_at",               null: false
   end
 
-  add_index "searches", ["user_id", "created_at"], name: "index_searches_on_user_id_and_created_at", using: :btree
-  add_index "searches", ["user_id"], name: "index_searches_on_user_id", using: :btree
+  add_index "searches", ["user_id", "created_at"], name: "index_searches_on_user_id_and_created_at"
+  add_index "searches", ["user_id"], name: "index_searches_on_user_id"
 
   create_table "states", force: :cascade do |t|
     t.string   "name"
@@ -157,6 +154,4 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.datetime "updated_at",      null: false
   end
 
-  add_foreign_key "corporateprofiles", "users"
-  add_foreign_key "searches", "users"
 end

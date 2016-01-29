@@ -2,12 +2,14 @@ class CreateCorporateprofiles < ActiveRecord::Migration
   def change
     create_table :corporateprofiles do |s|
 	  
-	  s.string :status
+	    s.string :status
       s.string :companyname
       s.string :companylogo
       s.string :companybanner
+      s.string :companymotto
       s.string :companywebsite
       s.string :companyindustry
+      s.string :companyhiringstatus
       s.string :companytype
       s.string :companyheadquarters
       s.string :companysize

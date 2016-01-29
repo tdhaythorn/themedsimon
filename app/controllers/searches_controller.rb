@@ -2,9 +2,7 @@ class SearchesController < ApplicationController
     
 before_action :require_user
     
-    def index
-    end
-    
+
     def new
         @states = State.all
         @cities = City.all

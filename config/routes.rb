@@ -1,13 +1,5 @@
 Myapp::Application.routes.draw do
 
-  get 'corporateprofile/new'
-
-  get 'corporateprofile/create'
-
-  get 'corporateprofile/edit'
-
-  get 'corporateprofile/update'
-
   # You can have the root of your site routed with "root"
   root 'landing#index'
 
@@ -28,7 +20,7 @@ Myapp::Application.routes.draw do
   end
 
   get 'recent' => 'searches#recent'
-    #resources :profiles
+
  
   #corporate  
   get 'corporate' => 'corporate#index'

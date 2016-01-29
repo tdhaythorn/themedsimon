@@ -1,19 +1,14 @@
 class User < ActiveRecord::Base
- 
-has_many :searches, dependent: :destroy
-has_many :corporateprofiles, dependent: :destroy
 
+ after_create :build_profile
+
+ has_many :searches, dependent: :destroy
+ has_one :corporateprofile, dependent: :destroy
+
+ def build_profile
+    Corporateprofile.create(user: self) # Associations must be defined correctly for this syntax, avoids using ID's directly.
+  end
 
 has_secure_password 
-
-
-#before_create :build_default_profile
-
-#profiles
-#has_one :profile, autosave: true
-  #accepts_nested_attributes_for :profile
-
-
-
 
 end

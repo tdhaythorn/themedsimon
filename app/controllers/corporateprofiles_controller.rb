@@ -1,20 +1,13 @@
 class CorporateprofilesController < ApplicationController
   
-def new
-    @corporateprofile = Corporateprofile.new
-  end
-  
-  def create
-    @corporateprofile = Corporateprofile.new(profile_params)
-    if @corporateprofile.save
-      redirect_to user_path(current_user)
-    else
-      render new_user_profiles
-    end
+before_action :require_user
+
+  def show
+      @corporateprofile = Corporateprofile.find_by(id: params[:id])
   end
   
   def edit
-    @corporateprofile = Corporateprofile.find(current_user.corporateprofile.id)
+      @corporateprofile = Corporateprofile.find_by(id: params[:id])
   end
   
   def update
