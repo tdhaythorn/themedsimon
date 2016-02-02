@@ -63,7 +63,6 @@
                     <li class="<%= is_active_action('inbox') %>"><%= link_to "Inbox", mailbox_inbox_path %> </li>
                     <li class="<%= is_active_action('email_view') %>"><%= link_to "Email view", mailbox_email_view_path %> </li>
                     <li class="<%= is_active_action('compose_email') %>"><%= link_to "Compose email", mailbox_compose_email_path %> </li>
-                    <li class="<%= is_active_action('email_templates') %>"><%= link_to "Email templates", mailbox_email_templates_path %> </li>
                 </ul>
             </li>
 
@@ -72,12 +71,7 @@
                 <ul class="nav nav-second-level collapse <%= is_active_controller('corporateprofiles') %>">
                     
                     
-                    <li class="<%= is_active_action('show_corporateprofiles') %>"><%= link_to "Show Profile", user_corporateprofile_path(current_user, current_user) %> </li>
-
-                    <li class="<%= is_active_action('edit_corporateprofiles') %>"><%= link_to "Edit Profile", edit_user_corporateprofile_path(current_user, current_user) %> </li>
-
-
-
+                    <li class="<%= is_active_action('show_corporateprofiles') %>"><%= link_to "Update Profile", corporateprofile_path(current_user) %> </li>
 
                 </ul>
             </li>

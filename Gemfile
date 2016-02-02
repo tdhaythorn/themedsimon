@@ -9,10 +9,16 @@ gem 'unicode_utils', '~> 1.4'
 gem 'currencies', '~> 0.4.2'
 gem 'i18n_data', '~> 0.7.0'
 
-gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+gem 'will_paginate' #paginates users in search results
+gem 'bootstrap-will_paginate' #paginates users in search results
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'simple_format', '~> 0.0.2'
+
+gem "responders"
+gem 'json', '~> 1.8', '>= 1.8.3'
+gem 'jquery-rails'
+gem 'best_in_place'
 
 group :development do
     gem 'sqlite3'

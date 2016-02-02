@@ -8,9 +8,6 @@ class MailboxController < ApplicationController
   def compose_email
   end
 
-  def email_templates
-  end
-
   def basic_action_email
     render :layout => false
   end

@@ -15,6 +15,7 @@ class CreateCorporateprofiles < ActiveRecord::Migration
       s.string :companysize
       s.string :companyvideo
       s.string :aboutus
+      s.string :ourpeople
       s.string :country
       s.string :state
       s.string :city
@@ -27,3 +28,6 @@ class CreateCorporateprofiles < ActiveRecord::Migration
       
     end
   end
+
+
+       :status, :companyname, :companylogo, :companybanner, :companymotto, :companywebsite, :companyindustry,:companyhiringstatus, :companytype, :companyheadquarters, :companysize, :companyvideo, :aboutus, :ourpeople, :country, :state

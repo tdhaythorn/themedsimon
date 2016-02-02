@@ -16,8 +16,9 @@ Myapp::Application.routes.draw do
   ##BELOW are embedded URL
   resources :users do
     resources :searches
-    resources :corporateprofiles
   end
+  resources :corporateprofiles
+
 
   get 'recent' => 'searches#recent'
 

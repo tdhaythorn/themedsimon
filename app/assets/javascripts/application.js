@@ -13,3 +13,8 @@
 //= require slimscroll/jquery.slimscroll.min.js
 //= require inspinia.js
 
+//= require best_in_place
+//= require_tree
+
+
+
