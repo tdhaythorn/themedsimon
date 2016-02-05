@@ -1,0 +1,104 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+        <h2>Select Your Graduates</h2>
+        <ol class="breadcrumb">
+          <li>
+            <a href="<%= url_for :controller => 'dashboards', :action => 'dashboard_1' %>">Dashboard</a>
+          </li>
+          <li>
+            <a>Searches</a>
+          </li>
+          <li class="active">
+            <a>New Search</a>
+          </li>
+          <li class="active">
+            <strong>Results</strong>
+          </li>
+        </ol>
+  </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight"> <!--  makes content fade in  -->
+    <div class="row"> <!-- Starts the new section for the content -->
+    
+        <div class="col-lg-1"> <!-- Left Buffer -->
+        </div> <!-- Left Buffer -->
+        <div class="col-lg-10"> <!-- Graduates --> 
+            <div class="row"> <!-- Start Box for Grads and Tick Box -->
+                    <div class="ibox float-e-margins">
+                        <% if @search.search_students.empty? %>
+                            <p> No Students Found</p>
+                        <% else %>
+                            <% @search.search_students.each do |c| %>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"><h3 class="panel-title"> <%= c.firstname %> <%= c.lastname %></h3></div>
+                                    <div class="panel-body"> <!-- Start Panel-Body -->
+                                        <div class="row"> <!-- Start Row -->
+                                            <div class"col-lg-6">
+                                            User Photo
+                                            </div>
+                                            <div class"col-lg-6">
+                                             City: <%= c.city %>
+                                             <br>
+                                             Grade Point Average: <%= c.gpa %>
+                                            </div>
+                                        </div> <!--end row -->
+                                    </div> <!-- End Panel-Body -->
+                                </div> <!--End Panel -->
+                            <% end %>
+                        <% end %>
+                    </div>
+
+            </div> <!-- End Box for Grads and Tick Box -->
+        </div>
+        <div class="col-lg-1"> <!-- Right Buffer -->
+        </div> <!-- End Right Buffer -->
+    </div> <!-- End the new section for the content -->
+
+    <button type="button" class="btn btn-default"><%= link_to 'Back', new_user_search_path(current_user) %></button>
+</div> 
+
+
+<!-- break -->
+
+
+<div class="wrapper wrapper-content animated fadeInRight"> <!--  makes content fade in  -->
+    <div class="row"> <!-- Starts the new section for the content -->
+    
+        <div class="col-lg-1"> <!-- Left Buffer -->
+        </div> <!-- Left Buffer -->
+        <div class="col-lg-10"> <!-- Graduates --> 
+            <div class="row"> <!-- Start Box for Grads and Tick Box -->
+                    <div class="ibox float-e-margins">
+                        <% if @search.search_students.empty? %>
+                            <p> No Students Found</p>
+                        <% else %>
+                            <% @search.search_students.each do |c| %>
+                                    <div class="panel panel-default">
+                                         <div class="panel-heading"><%= c.firstname %> <%= c.lastname %></div>
+                                         <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-6">col1</div><div class="col-md-6">col2</div>
+                                            </div> 
+                                            <div class="row">
+                                                <div class="col-md-6">col1</div><div class="col-md-6">col2</div>
+                                            </div> 
+                                            <div class="row">
+                                                <div class="col-md-6">col1</div><div class="col-md-6">col2</div>
+                                            </div> 
+                                         </div>
+                                        </div>
+                            <% end %>
+                            <% end %>
+                    </div>
+
+            </div> <!-- End Box for Grads and Tick Box -->
+        </div>
+        <div class="col-lg-1"> <!-- Right Buffer -->
+        </div> <!-- End Right Buffer -->
+    </div> <!-- End the new section for the content -->
+
+    <button type="button" class="btn btn-default"><%= link_to 'Back', new_user_search_path(current_user) %></button>
+</div> 
+
+
