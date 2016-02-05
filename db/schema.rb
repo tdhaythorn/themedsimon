@@ -46,27 +46,6 @@ ActiveRecord::Schema.define(version: 20160103050500) do
   add_index "corporateprofiles", ["user_id", "created_at"], name: "index_corporateprofiles_on_user_id_and_created_at"
   add_index "corporateprofiles", ["user_id"], name: "index_corporateprofiles_on_user_id"
 
-  create_table "corporates", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "status"
-    t.string   "companyname"
-    t.string   "companylogo"
-    t.string   "companymotto"
-    t.string   "companybanner"
-    t.string   "companywebsite"
-    t.string   "companyindustry"
-    t.string   "companytype"
-    t.string   "companyheadquarters"
-    t.string   "companyemployees"
-    t.string   "companyvideo"
-    t.string   "aboutus"
-    t.string   "country"
-    t.string   "state"
-    t.string   "city"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-  end
-
   create_table "languages", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false

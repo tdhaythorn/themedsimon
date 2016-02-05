@@ -30,4 +30,4 @@ class CreateCorporateprofiles < ActiveRecord::Migration
   end
 
 
-       :status, :companyname, :companylogo, :companybanner, :companymotto, :companywebsite, :companyindustry,:companyhiringstatus, :companytype, :companyheadquarters, :companysize, :companyvideo, :aboutus, :ourpeople, :country, :state
+       
