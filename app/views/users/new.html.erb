@@ -23,6 +23,14 @@
                 <div class="ibox-content">
                     
             <%= bootstrap_form_for(@user) do |f| %>
+            
+            <div class="field">
+              <%= f.form_group :gender, label: { text: "Are you a Student or a Corporate?" } do %>
+              <p></p>
+                  <%= f.radio_button :profile_type, 1, label: "Student",   inline: true %>
+                  <%= f.radio_button :profile_type, 2, label: "Corporate", inline: true %>
+                <% end %>
+          </div>
 
             <div class="field">
                   <%= f.text_field :firstname, :placeholder => "First name" %> 
@@ -39,8 +47,9 @@
             <div class="field">
                   <%= f.password_field :password, :placeholder => "Password" %>
                   <%= f.submit "Create account", class: "btn btn-primary block full-width m-b" %>
-
             </div>
+
+
             
 
         

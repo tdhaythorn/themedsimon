@@ -22,6 +22,10 @@ gem 'best_in_place'
 
 group :development do
     gem 'sqlite3'
+    gem 'better_errors'
+	gem 'hub', :require=>nil
+	gem 'quiet_assets'
+	gem 'rails_layout'
 end
 
 group :production do

@@ -26,13 +26,13 @@ default: &default
 
 development:
  ###PG below
-  #<<: *default
-  #database: simontest_development
+  <<: *default
+  database: simontest_development
  ###SQL below 
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
+ # adapter: sqlite3
+ # database: db/development.sqlite3
+ # pool: 5
+ # timeout: 5000
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

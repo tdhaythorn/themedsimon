@@ -1,18 +1,20 @@
 class User < ActiveRecord::Base
 
- after_create :build_profile
-
- has_many :searches, dependent: :destroy
- has_one :corporateprofile,autosave: true, dependent: :destroy
-
- #def build_profile
- #self.corporate_profile = Corporateprofile.new
- #end
-
- def build_profile
-    Corporateprofile.create(user: self) # Associations must be defined correctly for this syntax, avoids using ID's directly.
-  end
-
  has_secure_password 
 
-end
+  has_one :student_profile, dependent: :destroy
+  has_one :corporate_profile, dependent: :destroy
+  has_many :searches, dependent: :destroy
+
+
+  #attr_accessor :profile_type
+  before_create :create_profile
+
+	  def create_profile
+	    if profile_type == 1
+	      build_student_profile
+	    elsif profile_type == 2
+	      build_corporate_profile
+	    end
+	  end
+ end

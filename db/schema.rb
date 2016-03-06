@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160103050500) do
+ActiveRecord::Schema.define(version: 20160206032754) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "corporateprofiles", force: :cascade do |t|
+  create_table "corporate_profiles", force: :cascade do |t|
     t.string   "status"
     t.string   "companyname"
     t.string   "companylogo"
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.datetime "updated_at",          null: false
   end
 
-  add_index "corporateprofiles", ["user_id", "created_at"], name: "index_corporateprofiles_on_user_id_and_created_at"
-  add_index "corporateprofiles", ["user_id"], name: "index_corporateprofiles_on_user_id"
+  add_index "corporate_profiles", ["user_id", "created_at"], name: "index_corporate_profiles_on_user_id_and_created_at"
+  add_index "corporate_profiles", ["user_id"], name: "index_corporate_profiles_on_user_id"
 
   create_table "languages", force: :cascade do |t|
     t.string   "name"
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "students", force: :cascade do |t|
+  create_table "student_profiles", force: :cascade do |t|
     t.string   "user_id"
     t.string   "status"
     t.string   "firstname"
@@ -128,13 +128,20 @@ ActiveRecord::Schema.define(version: 20160103050500) do
     t.datetime "updated_at",               null: false
   end
 
+  add_index "student_profiles", ["user_id", "created_at"], name: "index_student_profiles_on_user_id_and_created_at"
+
   create_table "users", force: :cascade do |t|
     t.string   "firstname"
     t.string   "lastname"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "profile_type"
+    t.integer  "profileable_id"
+    t.string   "profileable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
+
+  add_index "users", ["profileable_id"], name: "index_users_on_profileable_id"
 
 end

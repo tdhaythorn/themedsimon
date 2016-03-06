@@ -1,7 +1,7 @@
 class WidgetsController < ApplicationController
   def index
 
-   @corporateprofile = Corporateprofile.find_by(id: params[:id])
+   @corporateprofile = CorporateProfile.find_by(id: params[:id])
 
   end
 

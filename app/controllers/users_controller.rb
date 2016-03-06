@@ -13,7 +13,6 @@ class UsersController < ApplicationController
       @user = current_user
     end
     @searches = Search.where(user_id: @user).includes(:state, city: [:profile])
-
   end
 
 
@@ -25,11 +24,9 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
-    #@corporateprofile = Corporateprofile.new(user_idparams)
 
     if @user.save
       session[:user_id] = @user.id
-      #redirect_to '/corporate'
       redirect_to widgets_index_path
     else
       redirect to '/signup'
@@ -38,7 +35,7 @@ class UsersController < ApplicationController
   
 private
   def user_params
-    params.require(:user).permit(:firstname, :lastname, :email, :password)
+    params.require(:user).permit(:firstname, :lastname, :email, :password, :profile_type)
   end
 
 

@@ -30,15 +30,32 @@
 
     <!-- Wrapper-->
     <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
-
-        <!-- Navigation -->
-        <%= render 'layouts/navigation' unless current_page?(signup_path) or current_page?(login_path)  %>
+        
+         <!-- Navigation -->
+        <% if current_user %>
+            <% if current_user.profile_type == 2 %>
+                <!-- Corporate Navigation -->
+                <%= render 'layouts/navigation_corporate'  %>
+            <% elsif current_user.profile_type == 1  %>
+                <!-- Student Navigation -->
+                <%= render 'layouts/navigation_student'  %>
+            <% end %>
+        <% end %>
 
         <!-- Page wraper -->
         <div id="page-wrapper" class="gray-bg <%= @extra_class %>">
 
             <!-- Page wrapper -->
-            <%= render 'layouts/topnavbar' unless current_page?(signup_path) or current_page?(login_path)%>
+            <% if current_user %>
+                <% if current_user.profile_type == 2 %>
+                    <!-- Corporate Navigation -->
+                    <%= render 'layouts/topnavbar_corporate'  %>
+                <% elsif current_user.profile_type == 1  %>
+                    <!-- Student Navigation -->
+                    <%= render 'layouts/topnavbar_student'  %>
+                <% end %>
+            <% end %>
+
 
             <!-- Main view  -->
             <%= yield %>

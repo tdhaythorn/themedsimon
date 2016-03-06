@@ -6,7 +6,7 @@ class Search < ActiveRecord::Base
     
     def search_students
         
-        students = Student.all
+        students = StudentProfile.all
  
         
         #students = students.where(["status == "Active""])
