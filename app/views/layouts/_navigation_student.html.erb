@@ -56,12 +56,14 @@
                 </ul>
             </li>
 
-            <li class="<%= is_active_controller('Student Profiles') %>">
-                <a href="#"><i class="fa fa-user"></i> <span class="nav-label" data-i18n="nav.corporateprofiles">Student Profile </span><span></span></a>
-                <ul class="nav nav-second-level collapse <%= is_active_controller('corporateprofiles') %>">
+            <li class="<%= is_active_controller('student_profiles') %>">
+                <a href="#"><i class="fa fa-user"></i> <span class="nav-label" data-i18n="nav.studentprofiles">Student Profile </span><span></span></a>
+                <ul class="nav nav-second-level collapse <%= is_active_controller('student_profiles') %>">
                     
                     
-                    <li class="<%= is_active_action('show_corporateprofiles') %>"><%= link_to "Update Profile", corporateprofile_path(current_user) %> </li>
+                    <li class="<%= is_active_action('show_student_profiles') %>"><%= link_to "Show Profile", student_profile_path(current_user) %> </li>
+
+                    <li class="<%= is_active_action('show_student_profiles') %>"><%= link_to "Update Profile", edit_student_profile_path(current_user) %> </li>
 
                 </ul>
             </li>

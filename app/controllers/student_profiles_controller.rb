@@ -1,33 +1,27 @@
-class Student_ProfilesController < ApplicationController
+class StudentProfilesController < ApplicationController
 
 before_action :require_user
 respond_to :html, :json
 
 
   def show
-      @studentprofile = StudentProfile.find(current_user.studentprofile.id)
+      @studentprofile = StudentProfile.find(current_user.student_profile.id)
   end
   
   def edit
-      @studentprofile = StudentProfile.find(current_user.studentprofile.id)
+      @studentprofile = StudentProfile.find(current_user.student_profile.id)
   end
-
-  def update
-      @studentprofile = StudentProfile.find_by(id: params[:id])
-      @studentprofile.update_attributes(student_profile_params)
-      respond_with @studentprofile
-   end
   
-  #def update - For before the gem for linkedin style editing
-   #   @corporateprofile = Corporateprofile.find_by(id: params[:id])
-    #if @corporateprofile.update_attributes(corporateprofile_params)
-    #  flash[:success] = "Profile Updated"
-    #  redirect_to show_user_corporateprofiles_path
-    #else
-    #  flash.now[:error] = "Something went wrong" 
-    #  render edit_user_corporateprofiles_path
-    #end
-  #end
+  def update 
+      @corporateprofile = StudentProfile.find_by(id: params[:id])
+    if @corporateprofile.update_attributes(student_profile_params)
+      flash[:success] = "Profile Updated"
+      redirect_to show_student_profiles_path
+    else
+      flash.now[:error] = "Something went wrong" 
+      render edit_student_profiles_path
+    end
+  end
   
   private
 

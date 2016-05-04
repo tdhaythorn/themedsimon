@@ -1,0 +1,74 @@
+Searching 12889 files for "CorporateprofilesController"
+
+/Users/tom/simon_polymorphic/app/controllers/corporate_profiles_controller.rb:
+    1: class CorporateProfilesController < ApplicationController
+    2  
+    3  before_action :require_user
+
+1 match in 1 file
+
+
+Searching 12889 files for "Corporateprofiles"
+
+/Users/tom/simon_polymorphic/app/controllers/corporate_profiles_controller.rb:
+    1: class CorporateprofilesController < ApplicationController
+    2  
+    3  before_action :require_user
+    .
+   23      #if @corporateprofile.update_attributes(corporateprofile_params)
+   24      #  flash[:success] = "Profile Updated"
+   25:     #  redirect_to show_user_corporateprofiles_path
+   26      #else
+   27      #  flash.now[:error] = "Something went wrong" 
+   28:     #  render edit_user_corporateprofiles_path
+   29      #end
+   30    #end
+
+/Users/tom/simon_polymorphic/app/controllers/student_profiles_controller.rb:
+   23      #if @corporateprofile.update_attributes(corporateprofile_params)
+   24      #  flash[:success] = "Profile Updated"
+   25:     #  redirect_to show_user_corporateprofiles_path
+   26      #else
+   27      #  flash.now[:error] = "Something went wrong" 
+   28:     #  render edit_user_corporateprofiles_path
+   29      #end
+   30    #end
+
+/Users/tom/simon_polymorphic/app/views/corporateprofiles/edit.html.erb:
+   24  <div class="wrapper wrapper-content animated fadeInRight"> <!--start all content -->
+   25  
+   26: <%= form_for @corporateprofile, url: user_corporateprofiles_path(current_user) do |s| %>
+   27  
+   28  <div class="row m-b-lg m-t-lg"> <!--start corporate information-->
+   ..
+   37                      <h2 class="no-margins">
+   38                          
+   39:                         <%= best_in_place @corporateprofile, :companyname, url: user_corporateprofiles_path(current_user) %>
+   40  
+   41                          <%= s.text_field :companyname, :placeholder => "Company Name" %>
+
+/Users/tom/simon_polymorphic/app/views/layouts/_navigation_corporate.html.erb:
+   67              </li>
+   68  
+   69:             <li class="<%= is_active_controller('corporateprofiles') %>">
+   70:                 <a href="#"><i class="fa fa-user"></i> <span class="nav-label" data-i18n="nav.corporateprofiles">Corporate Profile </span><span></span></a>
+   71:                 <ul class="nav nav-second-level collapse <%= is_active_controller('corporateprofiles') %>">
+   72                      
+   73                      
+   74:                     <li class="<%= is_active_action('show_corporateprofiles') %>"><%= link_to "Update Profile", corporateprofile_path(current_user) %> </li>
+   75  
+   76                  </ul>
+
+/Users/tom/simon_polymorphic/config/routes.rb:
+   20      get 'recent' => 'searches#recent'
+   21  
+   22:   resources :corporateprofiles
+   23    resources :studentprofiles
+   24  
+
+/Users/tom/simon_polymorphic/db/migrate/20160103050500_create_corporate_profiles.rb:
+    1: class CreateCorporateProfiles < ActiveRecord::Migration
+    2    def change
+    3      create_table :corporate_profiles do |s|
+
+13 matches across 6 files

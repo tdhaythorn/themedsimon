@@ -3,7 +3,6 @@ Myapp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'landing#index'
 
-
   #logging in
   get '/login' => 'sessions#new'
   post 'login' => 'sessions#create'
@@ -14,31 +13,20 @@ Myapp::Application.routes.draw do
   get 'signup'  => 'users#new' 
 
 
-  #Corporate Sign Up
   resources :users do
     resources :searches
   end
+    get 'recent' => 'searches#recent'
 
-  resources :corporateprofiles
+  resources :corporate_profiles
+  resources :student_profiles
+
   get "register" => "employers#new", as: "register"
   #get "/:id/update-profile" => "employers#editprofile", as: "profile/update"
   get "employers/signup" => "employers#home"
 
 
-  #Student Sign Up
-  #get "signup" => "students#new", as: "signup"
-  #get "update" => "students#edit", as: "update"
-  #get "students/:id/profile" => "students#profile", as: "profile/info"
-  resources :students
-  
 
-
-  ##BELOW are embedded URL
-  
-
-
-
-  get 'recent' => 'searches#recent'
 
  
 

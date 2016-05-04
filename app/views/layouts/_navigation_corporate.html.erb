@@ -66,12 +66,13 @@
                 </ul>
             </li>
 
-            <li class="<%= is_active_controller('corporateprofiles') %>">
+            <li class="<%= is_active_controller('corporate_profiles') %>">
                 <a href="#"><i class="fa fa-user"></i> <span class="nav-label" data-i18n="nav.corporateprofiles">Corporate Profile </span><span></span></a>
-                <ul class="nav nav-second-level collapse <%= is_active_controller('corporateprofiles') %>">
+                <ul class="nav nav-second-level collapse <%= is_active_controller('corporate_profiles') %>">
                     
-                    
-                    <li class="<%= is_active_action('show_corporateprofiles') %>"><%= link_to "Update Profile", corporateprofile_path(current_user) %> </li>
+                    <li class="<%= is_active_action('show_corporate_profiles') %>"><%= link_to "Show Profile", corporate_profile_path(current_user) %> </li>
+
+                    <li class="<%= is_active_action('update_corporate_profiles') %>"><%= link_to "Update Profile", edit_corporate_profile_path(current_user) %> </li>
 
                 </ul>
             </li>
