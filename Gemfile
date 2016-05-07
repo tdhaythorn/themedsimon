@@ -9,6 +9,8 @@ gem 'unicode_utils', '~> 1.4'
 gem 'currencies', '~> 0.4.2'
 gem 'i18n_data', '~> 0.7.0'
 
+gem 'bootstrap-slider-rails'
+
 gem 'will_paginate' #paginates users in search results
 gem 'bootstrap-will_paginate' #paginates users in search results
 # Use ActiveModel has_secure_password

@@ -1,5 +1,7 @@
 class CreateSearches < ActiveRecord::Migration
   
+
+  
   def change
     create_table :searches do |t|
       t.string :searchname
@@ -29,7 +31,7 @@ class CreateSearches < ActiveRecord::Migration
       t.string :currentlyemployed
       t.string :worktype
 
-      t.boolean :saved
+      t.boolean :saved, default: false
       t.integer :resultscount
 
       t.references :user, index: true, foreign_key: true

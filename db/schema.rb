@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160206032754) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "cities", force: :cascade do |t|
     t.string   "name"
     t.string   "state"
@@ -46,8 +43,8 @@ ActiveRecord::Schema.define(version: 20160206032754) do
     t.datetime "updated_at",          null: false
   end
 
-  add_index "corporate_profiles", ["user_id", "created_at"], name: "index_corporate_profiles_on_user_id_and_created_at", using: :btree
-  add_index "corporate_profiles", ["user_id"], name: "index_corporate_profiles_on_user_id", using: :btree
+  add_index "corporate_profiles", ["user_id", "created_at"], name: "index_corporate_profiles_on_user_id_and_created_at"
+  add_index "corporate_profiles", ["user_id"], name: "index_corporate_profiles_on_user_id"
 
   create_table "languages", force: :cascade do |t|
     t.string   "name"
@@ -82,15 +79,15 @@ ActiveRecord::Schema.define(version: 20160206032754) do
     t.string   "gender"
     t.string   "currentlyemployed"
     t.string   "worktype"
-    t.boolean  "saved"
+    t.boolean  "saved",                    default: false
     t.integer  "resultscount"
     t.integer  "user_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
-  add_index "searches", ["user_id", "created_at"], name: "index_searches_on_user_id_and_created_at", using: :btree
-  add_index "searches", ["user_id"], name: "index_searches_on_user_id", using: :btree
+  add_index "searches", ["user_id", "created_at"], name: "index_searches_on_user_id_and_created_at"
+  add_index "searches", ["user_id"], name: "index_searches_on_user_id"
 
   create_table "states", force: :cascade do |t|
     t.string   "name"
@@ -131,7 +128,7 @@ ActiveRecord::Schema.define(version: 20160206032754) do
     t.datetime "updated_at",               null: false
   end
 
-  add_index "student_profiles", ["user_id", "created_at"], name: "index_student_profiles_on_user_id_and_created_at", using: :btree
+  add_index "student_profiles", ["user_id", "created_at"], name: "index_student_profiles_on_user_id_and_created_at"
 
   create_table "users", force: :cascade do |t|
     t.string   "firstname"
@@ -145,8 +142,6 @@ ActiveRecord::Schema.define(version: 20160206032754) do
     t.datetime "updated_at",       null: false
   end
 
-  add_index "users", ["profileable_id"], name: "index_users_on_profileable_id", using: :btree
+  add_index "users", ["profileable_id"], name: "index_users_on_profileable_id"
 
-  add_foreign_key "corporate_profiles", "users"
-  add_foreign_key "searches", "users"
 end

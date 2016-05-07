@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   has_one :student_profile, dependent: :destroy
   has_one :corporate_profile, dependent: :destroy
-  has_many :searches, dependent: :destroy
+  has_many :searches,-> { order "created_at desc" }, dependent: :destroy
 
 
   #attr_accessor :profile_type

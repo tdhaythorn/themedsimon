@@ -58,16 +58,21 @@
                     
                         <tr>
                             <td class="project-status">
-                                <span class="label label-primary">Active</span>
+                                <% if c.saved == false %>
+                                    <span> </span>
+                                <% else %>
+                                    <span class="label label-primary">Saved</span>
+                                <% end %>
+
                             </td>
                             <td class="project-title">
-                                
 
                                <%= link_to c.searchname, user_search_path(current_user, c.id)%>
 
                             <br />
-                            <small> Created At: <%= c.created_at %> </small>
-                            <small> Updated At: <%= c.updated_at %> </small>
+                            <small> Searched on <%= c.created_at.strftime("%a %d-%b-%Y") %> </small>
+                            <br/>
+                            <small> Updated on <%= c.updated_at.strftime("%d-%b-%Y") %> </small>
                         </td>
                         <td class="project-completion">
                             <small>Completion with: 48%</small>
@@ -84,10 +89,8 @@
                         </td>
                         <td class="project-actions">
                             
-                            <%= link_to c.searchname, user_search_path(current_user, c.id)%>
-                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                            
+                            <button type="button" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i><%= link_to " View", user_search_path(current_user, c.id)%></button>
+
                         </td>
                         </tr>
                     
